@@ -12,10 +12,10 @@
         <div class="logo">
             <h4>PlateVision</h4>
         </div>
-        <nav>
+        <nav class="navbar">
             <ul>
-                <li><a href="#tentang">About</a></li>
-                <li><a href="#anpr">ANPR</a></li>
+                <li><a href="#tentang">Feature</a></li>
+                <li><a href="#anpr">About</a></li>
                 <li><a href="#team">Teammate</a></li>
             </ul>
         </nav>
@@ -23,57 +23,42 @@
     <main>
         <div class="content" id="home">
             <div class="jumbotron">
-                <img src="{{ url_for('static', filename='asset/banner2.jpg') }}" alt="" />
                 <div class="jumbotron-description">
-                    <div class="garis"></div>
                     <div class="deskripsi">
-                        <h2 class="judul">Automatic Recognition</h2>
-                        <div class="garisHorizontal"></div>
-                        <p>
+                        <h2 class="judul">Instant Recognition, Infinite New Possibilities</h2>
+                        <p class="penjelasan">
                             Automatic Number Plate Recognition adalah sistem
                             pendeteksi plat nomor otomatis yang melibatkan teknik
                             dalam pemrosesan citra digital
                         </p>
-                        <div class="tombol">
-                            <a href="#diagnosis">Get Started</a>
-                        </div>
+                        
+                        <a href="getStarted" class="getStarted">Get Started</a>
+                        
                     </div>
                 </div>
             </div>
             <div class="">
-                <article class="tentang" id="tentang">
-                    <figure>
-                        <img src="{{ url_for('static', filename='asset/aboutImage.jpg') }}" alt="HAHAHA" />
-                    </figure>
-                    <div class="content-container" id="tentang">
-                        <h2>Tentang ANPR</h2>
-                        <p>
-                            PlateVision adalah sistem untuk mendeteksi plat kendaraan secara otomatis.
-                            Sistem ini dirancang dengan interface berbasis web menggunakan framework flask sebagai GUI. Serta menggunakan bahasa pemrograman pyhton sebagai back-end dari aplikasi PlateVision ini.
-                        </p>
-                    </div>
-                </article>
-                <div class="diagnosis-judul" id="diagnosis">
+                <div class="judul-content">
                     <h2>Automatic Number Plate Recognition</h2>
                 </div>
                 {% if fileGambar %}
                <h2>Proses 1 (Gray Image)</h2>
-                <img src="../static/uploads/plat7.PNG" alt="Gray Image">
+                <img src="data:image/jpeg;base64,{{ result.proses1|b64encode }}" alt="Gray Image">
 
                 <h2>Proses 2 (Bilateral Filtered Image)</h2>
-                <img src="../edged_images/plat7.PNG" alt="Bilateral Filtered Image">
+                <img src="data:image/jpeg;base64,{{ result.proses2|b64encode }}" alt="Bilateral Filtered Image">
 
                 <h2>Proses 3 (Edged Image)</h2>
-                <img src="../edged_images/plat7.PNG" alt="Edged Image">
+                <img src="data:image/jpeg;base64,{{ result.proses3|b64encode }}" alt="Edged Image">
 
                 <h2>Proses 4 (Cropped Image)</h2>
-                <img src="../cropped_images/plat7.PNG" alt="Cropped Image">
+                <img src="data:image/jpeg;base64,{{ result.proses4|b64encode }}" alt="Cropped Image">
 
                 <h2>Hasil OCR</h2>        
-                <p>{{ "yeee" }}</p>
+                <p>{{ result.ocr_result }}</p>
 
                 <button onclick="location.href='/'" class="back-button">Kembali</button>
-
+                
                 {% else %}
                 <form action="/upload" method="post" enctype="multipart/form-data">
                     <input type="file" id="imageUpload" name="file" accept="image/*" onchange="previewImage(event)">

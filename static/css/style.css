@@ -1,486 +1,104 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-
-
-
-#preview {
-    display: block;
-    margin: 20px auto;
-    max-width: 300px;
-    max-height: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-
-body {
+body{
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    font-family: 'quicksand';
-    box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
+*{
+    font-family: 'Quicksand'
+}
 
-
-header {
+header{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    position: absolute;
-    width: 100%;
-    z-index: 9999;
-    transition: background-color 0.5s;
+    padding-block: 1rem;
+    background: linear-gradient(115deg, #fdfcfb, #e2d1c3);
 
 }
 
-header .logo {
-    flex: 2;
+.navbar ul{
+    display: flex;
+    gap: 2rem;
 }
 
-header .logo h4 {
-    font-size: 2rem;
-    color: white;
-    padding-left: 10%;
-}
-
-header nav {
+.navbar ul li{
+    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
-
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    border-radius: 80px;
-    padding-left: 0%;
-    padding: 0.2rem;
-    padding-inline: 0.8rem;
-}
-
-header ul a {
+.navbar ul li a{
     text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    font-weight: 800;
-}
-
-header ul a:hover {
-    color: rgb(246, 132, 17);
-}
-
-
-
-header.scrolled {
-    transition: background-color 0.5s;
     color: black;
 }
 
-header.scrolled ul li a {
-    color: black;
-}
 
-header.scrolled ul li a:hover {
-    color: brown;
-}
 
-.jumbotron {
-    position: relative;
-}
-
-main .content .jumbotron img {
-    width: 100%;
-    object-fit: cover;
-    height: 100vh;
-    object-position: center;
-}
-
-main .content .jumbotron .jumbotron-description {
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    display: flex;
-    gap: 1rem;
-    height: 300px;
-    width: 60%;
-}
-
-.jumbotron-description .garis {
-    width: 10px;
-    height: 250px;
-    background-color: rgb(244, 208, 3);
-    opacity: 80%;
-
-}
-
-.jumbotron-description .deskripsi {
+.jumbotron{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(115deg, #fdfcfb, #e2d1c3);
+
 }
 
-.jumbotron-description .deskripsi .garisHorizontal {
-    width: 350px;
-    height: 3px;
-    background-color: rgb(244, 208, 3);
-    opacity: 80%;
+.jumbotron .jumbotron-description{
+    display: flex;
+    flex-direction: column;
 }
+
+.jumbotron .jumbotron-description .deskripsi{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.jumbotron .jumbotron-description .deskripsi .judul{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+
+.jumbotron .jumbotron-description .deskripsi .penjelasan{
+   width: 70%;
+   margin-top: 1rem;
+   font-size: larger;
+   text-align: center;
+}
+
+.jumbotron .jumbotron-description .deskripsi .getStarted{
+    text-decoration: none;
+    color: black;
+}
+
+
+.judul-content{
+    text-align: center;
+    font-size: large;
+}
+
+footer {
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1rem;
+            width: 100%;
+            bottom: 0;
+        }
 
 *{
     /* border: 1px solid red; */
 }
-
-.judul {
-    padding: 0;
-    margin: 0;
-    align-self: flex-start;
-    font-size: 3rem;
-    color: white;
-}
-
-.deskripsi p {
-    font-weight: 800;
-    font-size: 1.3rem;
-    text-align: justify;
-    width: 70%;
-}
-
-.tombol a {
-    color: black;
-    background-color: rgb(244, 208, 3);
-    width: 100px;
-    padding: 0.5rem;
-    border-radius: 10px;
-    text-decoration: none;
-    display: flex;
-    width: 100px;
-    justify-content: center;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.tombol a:hover {
-    background-color: darkgrey;
-}
-
-body {
-    height: 200vh;
-}
-
-
-
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.about .about-description {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 11px 10px 21px -3px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-
-}
-
-.about .about-description h2 {
-    width: 50%;
-    font-size: 4rem;
-    text-align: center;
-}
-
-.about .about-ilustration {
-    display: flex;
-    justify-content: space-around;
-    box-shadow: 26px -13px 21px -3px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 20px;
-
-}
-
-.about .about-ilustration p {
-    width: 50%;
-    /* display: flex;
-    text-align: center;
-    justify-content: center; */
-    /* align-items: center; */
-    font-size: 1.3rem;
-    font-weight: 500;
-}
-
-.about .about-description figure img {
-    border-radius: 20px;
-    width: 400px;
-    height: 370px;
-    object-fit: cover;
-}
-
-.about .about-ilustration .overview {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 400px;
-    border-radius: 20px;
-
-}
-
-.about .about-ilustration .overview .overview-item {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 11px 10px 21px -3px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-}
-
-
-aside img {
-    height: 180px;
-    width: 180px;
-    border-radius: 50%;
-}
-
-aside {
-    box-shadow: 26px -13px 21px -3px rgba(0, 0, 0, 0.1);
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-}
-
-aside {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-aside h3 {
-    font-size: 1.5rem;
-
-}
-
-aside p {
-    text-align: center;
-    width: 65%;
-    font-size: 1.1rem;
-    font-weight: 400;
-}
-
-.padding {
-    padding: 20px;
-    border-radius: 20px;
-}
-
-footer {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(158, 217, 20);
-    opacity: 80%;
-    padding: 20px;
-}
-
-.jumbotron::after {
-    content: " ";
-    width: 100%;
-    height: 10px;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(43, 126, 125, 1) 35%, rgba(146, 194, 40, 1) 52%, rgba(0, 212, 255, 1) 100%);
-}
-
-/* ====================================================================================================== */
-
-/* Medium devices (768px dan di bawahnya) */
-@media screen and (max-width: 914px) {
-
-
-    .about-description {
-        flex-direction: column;
-
-    }
-
-    .about .about-description h2 {
-        width: 100%;
-    }
-
-    .about-ilustration {
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    .about-ilustration .overview {
-        order: 1;
-    }
-
-    .about .about-ilustration p {
-        order: 2;
-        width: 100%;
-        /* display: flex;
-        text-align: center;
-        justify-content: center; */
-        /* align-items: center; */
-        text-align: center;
-        font-size: 1.3rem;
-        font-weight: 500;
-    }
-
-
-
-}
-
-main .tentang {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-main .tentang figure {
-    order: 2;
-    flex: 5;
-}
-
-main .tentang figure img {
-    width: 100%;
-    border-radius: 30px;
-}
-
-main .tentang .content-container {
-    order: 1;
-    flex: 7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1.5rem;
-    margin-block: 1rem;
-}
-
-main .tentang .content-container p {
-    text-align: center;
-    font-size: large;
-    width: 70%;
-    flex-shrink: 1;
-}
-
-main .tentang .content-container h2 {
-    font-size: 30px;
-    font-weight: 400;
-    font-weight: 600;
-}
-
-form {
-    max-width: 800px;
-    /* Sesuaikan dengan kebutuhan */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: repeat(auto-fill,
-            minmax(150px, 1fr));
-    /* Mengurangi ukuran kolom minimum */
-    gap: 10px;
-    /* Jarak antar item */
-}
-
-/* Mengatur tampilan input checkbox dan label */
-input[type="checkbox"] {
-    display: none;
-}
-
-input[type="checkbox"]+label {
-    position: relative;
-    display: block;
-    padding: 10px;
-    margin: 5px 0;
-    border: 2px solid #800080;
-    border-radius: 5px;
-    background-color: #ffffff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-input[type="checkbox"]:checked+label {
-    background-color: #800080;
-    color: #ffffff;
-}
-
-input[type="checkbox"]:checked+label:hover {
-    background-color: #800080;
-    /* Mengubah warna latar belakang saat checkbox dicentang dan dihover menjadi ungu */
-    color: #ffffff;
-    /* Mengubah warna teks saat checkbox dicentang dan dihover menjadi putih */
-}
-
-/* Mengatur tampilan tombol submit */
-button {
-    grid-column: 1 / -1;
-    /* Membuat tombol memanjang sepanjang seluruh kolom grid */
-    padding: 15px;
-    background-color: #ffffff;
-    /* Mengubah warna latar belakang menjadi putih */
-    color: #800080;
-    /* Mengubah warna teks menjadi ungu */
-    border: 2px solid #800080;
-    /* Mengubah warna outline menjadi ungu */
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background-color: #800080;
-    /* Mengubah warna latar belakang saat dihover menjadi ungu */
-    color: #ffffff;
-    /* Mengubah warna teks saat dihover menjadi putih */
-}
-
-/* Mengatur tampilan fokus pada label */
-input[type="checkbox"]+label:focus,
-button:focus {
-    outline: 2px dashed #800080;
-    /* Mengubah warna outline menjadi ungu */
-    outline-offset: 2px;
-}
-
-.diagnosis-judul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.diagnosis-judul h2{
-    font-size: 2rem;
-}
-
-/* ================================================================= */
-
-/* *{
-    border: 1px solid red;
-} */
-
-  .sistemPakar{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  
-  
-  
