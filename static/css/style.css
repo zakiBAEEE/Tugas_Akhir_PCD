@@ -254,3 +254,81 @@ margin-top: 3rem;
       .tombol-kembali:hover{
         background-color: #1D4ED8; 
       }
+
+
+
+      .teammate{
+        
+        margin-top: 3rem;
+      }
+
+      .teammate-container{
+        padding-left: 1rem;
+padding-right: 1rem; 
+padding-top: 2rem;
+padding-bottom: 2rem; 
+max-width: 1280px; 
+text-align: center; 
+display: flex;
+flex-direction: column;
+align-items: center;
+
+      }
+
+      .teammate-judul{
+        margin-bottom: 2rem; 
+max-width: 640px; 
+
+      }
+
+      .teammate-judul-text{
+        margin-bottom: 1rem; 
+font-size: 2.25rem;
+line-height: 2.5rem; 
+font-weight: 800; 
+letter-spacing: -0.025em; 
+color: #111827; 
+      }
+
+      .teammate-judul-deskripsi{
+        font-weight: 300; 
+color: #6B7280; 
+      }
+
+     
+      .daftar-anggota-kontainer{
+       display: flex;
+       /* flex-wrap: wrap; */
+       gap: 3rem;
+      }
+
+      .anggota-kontainer{
+        text-align: center; 
+color: #6B7280; 
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 300px;
+      }
+
+      .gambar-anggota{
+        margin-bottom: 1rem; 
+border-radius: 9999px; 
+width: 9rem; 
+height: 9rem; 
+
+
+      }
+
+      .nama-anggota{
+        margin-bottom: 0.25rem; 
+font-size: 1.5rem;
+line-height: 2rem; 
+font-weight: 700; 
+letter-spacing: -0.025em; 
+color: #111827; 
+width: 70%;
+
+      }
+
+     
