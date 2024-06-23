@@ -58,7 +58,7 @@
         
                          <h5 class="title-process">Proses 1 : Konversi Ke Grayscale</h5>
         
-                         <p class="penjelasan-process">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium deleniti ab tenetur dolore earum suscipit.</p>
+                         <p class="penjelasan-process">Citra dilakukan konversi dari RGB ke skala abu-abu agar dapat dilakukan filterisasi</p>
        
                         </div>
                     </div>
@@ -70,7 +70,7 @@
         
                      <h5 class="title-process">Proses 2 : Filterisasi Citra</h5>
         
-                     <p class="penjelasan-process">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium deleniti ab tenetur dolore earum suscipit.</p>
+                     <p class="penjelasan-process">Filterisasi citra menggunakan metode bilaterall filter yang tersedia di openCV</p>
        
                     </div>
                 </div>
@@ -82,7 +82,7 @@
         
                      <h5 class="title-process">Proses 3 : Deteksi Tepi Citra</h5>
         
-                     <p class="penjelasan-process">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium deleniti ab tenetur dolore earum suscipit.</p>
+                     <p class="penjelasan-process">Deteksi Tepi citra menggunakan metode Canny agar dapat diambil titik 4 sudut plat kendaraan sehingga citra dapat di crop</p>
        
                     </div>
                 </div>
@@ -94,7 +94,7 @@
         
                      <h5 class="title-process">Proses 4 : Masking Citra</h5>
         
-                     <p class="penjelasan-process">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium deleniti ab tenetur dolore earum suscipit.</p>
+                     <p class="penjelasan-process">Proses masking citra yang menyisakan bagian plat nomor kendaraan</p>
        
                     </div>
                 </div>
@@ -106,7 +106,7 @@
         
                      <h5 class="title-process">Proses 5 : Citra hasil Crop</h5>
         
-                     <p class="penjelasan-process">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium deleniti ab tenetur dolore earum suscipit.</p>
+                     <p class="penjelasan-process">Citra yang berhasil melalui proses crop </p>
        
                     </div>
                 </div>
@@ -117,7 +117,7 @@
         
                      <h5 class="title-process">Hasil : {{result.ocr_result}}</h5>
         
-                     <p class="penjelasan-process">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium deleniti ab tenetur dolore earum suscipit.</p>
+                     <p class="penjelasan-process">Telah diperoleh hasil ekstraksi karakter dari citra yaitu {{result.ocr_result}}</p>
        
                     </div>
                 </div>
