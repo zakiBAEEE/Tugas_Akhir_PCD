@@ -169,7 +169,7 @@ def process_image(filepath):
         cv2.imwrite(cropped_image_path, cropped_image)
         print(f'Cropped image saved to: {cropped_image_path}')
 
-        proses4 = cropped_image
+        proses4 = cropped_image_path
 
         # Initialize EasyOCR reader
         reader = easyocr.Reader(['en'])
