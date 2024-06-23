@@ -43,16 +43,17 @@
                 </div>
                 {% if fileGambar %}
                <h2>Proses 1 (Gray Image)</h2>
-                <img src="data:image/jpeg;base64,{{ result.proses1|b64encode }}" alt="Gray Image">
+                <img src="../{{result.proses1}}" alt="Gray Image">
 
                 <h2>Proses 2 (Bilateral Filtered Image)</h2>
-                <img src="data:image/jpeg;base64,{{ result.proses2|b64encode }}" alt="Bilateral Filtered Image">
+                 <img src="../{{result.proses2}}" alt="Gray Image">
 
                 <h2>Proses 3 (Edged Image)</h2>
-                <img src="data:image/jpeg;base64,{{ result.proses3|b64encode }}" alt="Edged Image">
+                <img src="../{{result.proses3}}" alt="Gray Image">
 
                 <h2>Proses 4 (Cropped Image)</h2>
-                <img src="data:image/jpeg;base64,{{ result.proses4|b64encode }}" alt="Cropped Image">
+                <img src="../{{result.proses4}}" alt="Gray Image">
+
 
                 <h2>Hasil OCR</h2>        
                 <p>{{ result.ocr_result }}</p>

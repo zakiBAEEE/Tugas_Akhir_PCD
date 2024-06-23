@@ -96,28 +96,42 @@ import os
 
 def process_image(filepath):
     try:
+        # ============================PROSES 1==========================================
         image_path = filepath
         img = cv2.imread(image_path)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        output_dir = os.path.join('static', 'gray_images')
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+        gray_image_path = os.path.join(output_dir, os.path.basename(image_path))
+        cv2.imwrite(gray_image_path, gray)
+        proses1 = gray_image_path
+        print(f'Edged image saved to: {gray_image_path}')
+        # ======================================================================
 
-        proses1 = gray
 
+        # ===========================PROSES 2===========================================
         bfilter = cv2.bilateralFilter(gray, 11, 17, 17)  # Noise reduction
+        filtered_output_dir = os.path.join('static', 'filtered_image')
+        if not os.path.exists(filtered_output_dir):
+            os.makedirs(filtered_output_dir)
+        filtered_image_path = os.path.join(filtered_output_dir, os.path.basename(image_path))
+        cv2.imwrite(filtered_image_path, bfilter)
+        proses2 = filtered_image_path
+        print(f'Edged image saved to: {filtered_image_path}')
+        # ======================================================================
 
-        proses2 = bfilter
 
+
+        # ======================================================================
         edged = cv2.Canny(bfilter, 30, 200)  # Edge detection
-
-        proses3 = edged
-
-        # Create folder if it does not exist
-        edged_folder = 'edged_images'
+        edged_folder = os.path.join( 'static', 'edged_images')
         os.makedirs(edged_folder, exist_ok=True)
-
-        # Save edged image
         edged_image_path = os.path.join(edged_folder, os.path.basename(filepath))
         cv2.imwrite(edged_image_path, edged)
+        proses3 = edged_image_path
         print(f'Edged image saved to: {edged_image_path}')
+        # ======================================================================
 
         keypoints = cv2.findContours(edged.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         contours = imutils.grab_contours(keypoints)
@@ -147,7 +161,7 @@ def process_image(filepath):
         print("Cropped image shape:", cropped_image.shape)
 
         # Create folder if it does not exist
-        output_folder = 'cropped_images'
+        output_folder = os.path.join( 'static', 'cropped_images')
         os.makedirs(output_folder, exist_ok=True)
 
         # Save cropped image
@@ -184,7 +198,5 @@ def process_image(filepath):
             'ocr_result': "No text found"
         }
 
-# Contoh penggunaan
-file_path = 'path_to_your_image.jpg'
-result_array = process_image(file_path)
-print(result_array)
+
+
