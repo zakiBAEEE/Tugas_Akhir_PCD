@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="">
+            <div class="konten">
                 <div class="judul-content">
                     <h2>Automatic Number Plate Recognition</h2>
                 </div>
@@ -60,11 +60,13 @@
                 <button onclick="location.href='/'" class="back-button">Kembali</button>
                 
                 {% else %}
+                <div class="card">
                 <form action="/upload" method="post" enctype="multipart/form-data">
                     <input type="file" id="imageUpload" name="file" accept="image/*" onchange="previewImage(event)">
-                    <img id="preview" src="#" alt="Preview" style="display: none; max-width: 300px; max-height: 300px;">
+                    <img id="preview" src="#" alt="Preview">
                     <button type="submit">Upload</button>
                 </form>
+    </div>
                 {% endif %}
             </div>
             
