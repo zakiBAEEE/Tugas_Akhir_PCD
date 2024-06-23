@@ -154,7 +154,7 @@ def process_image(filepath):
 
         masked_folder = os.path.join( 'static', 'masked_images')
         os.makedirs(masked_folder, exist_ok=True)
-        masked_image_path = os.path.join(edged_folder, os.path.basename(filepath))
+        masked_image_path = os.path.join(masked_folder, os.path.basename(filepath))
         cv2.imwrite(masked_image_path, new_image)
         proses4 = masked_image_path
         print(f'Masked image saved to: {masked_image_path}')
