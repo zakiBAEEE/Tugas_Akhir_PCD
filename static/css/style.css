@@ -6,6 +6,7 @@ body{
     padding: 0;
     display: flex;
     flex-direction: column;
+    width: 100vw;
 }
 
 *{
@@ -89,6 +90,50 @@ header{
     font-size: large;
 }
 
+.process-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+
+.card-process{
+background-color: #ffffff; 
+max-width: 24rem; 
+border-radius: 0.5rem; 
+border-width: 1px; 
+border-color: #E5E7EB; 
+box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); 
+}
+
+.card-process .image-process{
+border-top-left-radius: 0.5rem;
+border-top-right-radius: 0.5rem; 
+max-width: 24rem;
+}
+
+.card-process .description-process{
+    padding: 1.25rem; 
+}
+
+.card-process .description-process .title-process{
+margin-bottom: 0.5rem; 
+color: #111827; 
+font-size: 1.5rem;
+line-height: 2rem; 
+font-weight: 700; 
+letter-spacing: -0.025em; 
+}
+
+.card-process .description-process .penjelasan-process{
+margin-bottom: 0.75rem; 
+color: #374151; 
+font-weight: 400; 
+
+}
+
 footer {
             background-color: #ffffff;
             color: #000000;
@@ -98,51 +143,3 @@ footer {
             width: 100%;
             bottom: 0;
         }
-
-        .card{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-        }
-
-        .card form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 50%;
-        }
-
-        .card input[type="file"] {
-            margin-bottom: 1rem;
-        }
-
-        .card img {
-            display: none;
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-
-        .card button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .card button:hover {
-            background-color: #0056b3;
-        }
-
-        .konten{
-            background: linear-gradient(115deg, #ffffff, #d4dfed);
-        }
-
-*{
-    /* border: 1px solid red; */
-}
