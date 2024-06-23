@@ -106,7 +106,7 @@ def process_image(filepath):
         gray_image_path = os.path.join(output_dir, os.path.basename(image_path))
         cv2.imwrite(gray_image_path, gray)
         proses1 = gray_image_path
-        print(f'Edged image saved to: {gray_image_path}')
+        print(f'Gray image saved to: {gray_image_path}')
         # ======================================================================
 
 
@@ -118,7 +118,7 @@ def process_image(filepath):
         filtered_image_path = os.path.join(filtered_output_dir, os.path.basename(image_path))
         cv2.imwrite(filtered_image_path, bfilter)
         proses2 = filtered_image_path
-        print(f'Edged image saved to: {filtered_image_path}')
+        print(f'Filtered image saved to: {filtered_image_path}')
         # ======================================================================
 
 
@@ -151,6 +151,14 @@ def process_image(filepath):
         new_image = cv2.drawContours(mask, [location], 0, 255, -1)
         new_image = cv2.bitwise_and(img, img, mask=mask)
 
+
+        masked_folder = os.path.join( 'static', 'masked_images')
+        os.makedirs(masked_folder, exist_ok=True)
+        masked_image_path = os.path.join(edged_folder, os.path.basename(filepath))
+        cv2.imwrite(masked_image_path, new_image)
+        proses4 = masked_image_path
+        print(f'Masked image saved to: {masked_image_path}')
+
         (x, y) = np.where(mask == 255)
         (x1, y1) = (np.min(x), np.min(y))
         (x2, y2) = (np.max(x), np.max(y))
@@ -169,7 +177,7 @@ def process_image(filepath):
         cv2.imwrite(cropped_image_path, cropped_image)
         print(f'Cropped image saved to: {cropped_image_path}')
 
-        proses4 = cropped_image_path
+        proses5 = cropped_image_path
 
         # Initialize EasyOCR reader
         reader = easyocr.Reader(['en'])
@@ -183,6 +191,7 @@ def process_image(filepath):
             'proses2': proses2,
             'proses3': proses3,
             'proses4': proses4,
+            'proses5': proses5,
             'ocr_result': result[0][-2] if result else "No text found"
         }
 
